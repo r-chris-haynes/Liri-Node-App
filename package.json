@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/r-chris-haynes/Liri-Node-App/issues"
   },
-  "homepage": "https://github.com/r-chris-haynes/Liri-Node-App#readme"
+  "homepage": "https://github.com/r-chris-haynes/Liri-Node-App#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
