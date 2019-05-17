@@ -33,22 +33,39 @@ switch (userCommand) {
         console.log("==============================================================================================================")
 }
 
-// function concertAPI() {
+function bandsAPI() {
+    var concertUrl = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
+console.log(concertUrl);
+    axios.get(concertUrl).then(
+        
+        function (response) {
+           
+            var date = response.data[0].datetime;
+            var formatDate = moment(date).format('MM/DD/YYYY'); 
+            
+            console.log("====================================================================================================================================");
+            console.log(userInput +"'s next concert is at " + response.data[0].venue.name);
+            console.log("In " + response.data[0].venue.city + ", " + response.data[0].venue.region);
+            console.log("On " + formatDate);
+            console.log("====================================================================================================================================");
+            
+        }
+    );
+}
 
 
-// }
 
 
 
 
 
 function defaultMovie() {
-    var defaultMovieUrl = "http://www.omdbapi.com/?t=Mr.+Nobody&y=&plot=short&apikey=trilogy"; 
+    var defaultMovieUrl = "http://www.omdbapi.com/?t=Mr.+Nobody&y=&plot=short&apikey=trilogy";
 
     axios.get(defaultMovieUrl).then(
         function (response) {
-            
-           
+
+            console.log("====================================================================================================================================");
             console.log("Title: " + response.data.Title);
             console.log("Released: " + response.data.Released);
             console.log("Rated: " + response.data.Rated);
@@ -58,17 +75,9 @@ function defaultMovie() {
             console.log("Plot: " + response.data.Plot);
             console.log("Actors: " + response.data.Actors);
             console.log("====================================================================================================================================");
-        
-            
-            
-        
         }
-       
     );
-
 }
-
-
 
 function movieAPI() {
 
@@ -76,25 +85,22 @@ function movieAPI() {
 
     axios.get(movieQueryUrl).then(
         function (response) {
-            
-            if (userInput ==="") {
+
+            if (userInput === "") {
                 defaultMovie()
-            }  else {
-            console.log("Title: " + response.data.Title);
-            console.log("Released: " + response.data.Released);
-            console.log("Rated: " + response.data.Rated);
-            // console.log("Rotten Tomatoes Rating: " + response.data.Ratings.Source.Value);
-            console.log("Country: " + response.data.Country);
-            console.log("Language: " + response.data.Language);
-            console.log("Plot: " + response.data.Plot);
-            console.log("Actors: " + response.data.Actors);
-            console.log("====================================================================================================================================");
-        
-            
+            } else {
+                console.log("====================================================================================================================================");
+                console.log("Title: " + response.data.Title);
+                console.log("Released: " + response.data.Released);
+                console.log("Rated: " + response.data.Rated);
+                // console.log("Rotten Tomatoes Rating: " + response.data.Ratings.Source.Value);
+                console.log("Country: " + response.data.Country);
+                console.log("Language: " + response.data.Language);
+                console.log("Plot: " + response.data.Plot);
+                console.log("Actors: " + response.data.Actors);
+                console.log("====================================================================================================================================");
             }
-        
         }
-       
     );
 }
 
