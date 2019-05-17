@@ -2,7 +2,8 @@ require("dotenv").config();
 
 var fs = require("fs");
 var keys = require("./keys.js");
-var spotify = require("node-spotify-api");
+var Spotify = require("node-spotify-api");
+
 var axios = require("axios");
 var moment = require("moment");
 
@@ -53,6 +54,22 @@ console.log(concertUrl);
     );
 }
 
+function spotifyAPI(userInput) {
+
+    var spotify = new Spotify(keys.spotify);
+    
+    // console.log(spotify)
+
+   
+   
+           
+            
+           
+            
+            console.log("====================================================================================================================================");
+            
+            console.log("====================================================================================================================================");
+    }
 
 
 
