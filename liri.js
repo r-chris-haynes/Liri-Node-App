@@ -39,6 +39,8 @@ switch (userCommand) {
 
 function bandsAPI() {
 
+    
+    
     var concertUrl = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
 
     axios.get(concertUrl).then(function (response) {
@@ -75,28 +77,6 @@ function spotifyAPI() {
     });
 }
 
-// function defaultMovie() {
-//     var defaultMovieUrl = "http://www.omdbapi.com/?t=Mr.+Nobody&y=&plot=short&apikey=trilogy";
-
-//     axios.get(defaultMovieUrl).then(function (response) {
-
-//         var date = response.data.Released;
-//         var formatDate = moment(date).format('MM/DD/YYYY'); 
-
-//             console.log("====================================================================================================================================");
-//             console.log("Title: " + response.data.Title);
-//             console.log("Released: " + formatDate);
-//             console.log("Rated: " + response.data.Rated);
-//             // console.log("Rotten Tomatoes Rating: " + response.data.Ratings.Source.Value);
-//             console.log("Country: " + response.data.Country);
-//             console.log("Language: " + response.data.Language);
-//             console.log("Plot: " + response.data.Plot);
-//             console.log("Actors: " + response.data.Actors);
-//             console.log("====================================================================================================================================");
-//         }
-//     );
-// }
-
 function movieAPI() {
 
     if (userInput === undefined || userInput === "") {
@@ -106,7 +86,11 @@ function movieAPI() {
     var movieQueryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
 
     axios.get(movieQueryUrl).then(function (response) {
-
+    console.log(response)
+        // if (response.data.Response.Error === "False");{
+        //     console.log(error)
+        // }
+        console.log("I can't seem to find that one. It's " + response.data.Response.Error + ", Please try another one")
         console.log("====================================================================================================================================");
         console.log("Title: " + response.data.Title);
         console.log("Released: " + response.data.Released);
