@@ -82,7 +82,7 @@ function movieAPI() {
     var movieQueryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
 
     axios.get(movieQueryUrl).then(function (response) {
-        console.log(response.data.Ratings)
+        
         console.log("====================================================================================================================================");
         console.log("Title: " + response.data.Title);
         console.log("Released: " + response.data.Released);
