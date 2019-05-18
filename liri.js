@@ -3,7 +3,6 @@ require("dotenv").config();
 var fs = require("fs");
 var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
-
 var axios = require("axios");
 var moment = require("moment");
 
@@ -36,10 +35,10 @@ switch (userCommand) {
 
 function bandsAPI() {
     var concertUrl = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
-console.log(concertUrl);
+
     axios.get(concertUrl).then(
         
-        function (response) {
+        function (err, response) {
            
             var date = response.data[0].datetime;
             var formatDate = moment(date).format('MM/DD/YYYY'); 
@@ -54,21 +53,22 @@ console.log(concertUrl);
     );
 }
 
-function spotifyAPI(userInput) {
+function spotifyAPI() {
 
     var spotify = new Spotify(keys.spotify);
     
     // console.log(spotify)
 
-   
-   
+    spotify.search({ type: "track", query: userInput, limit: 1}).then(function(response) {
+        console.log(response.tracks.items);
+        console.log("====================================================================================================================================");
+         
+        
+        console.log("====================================================================================================================================");
+    
+    
+    })
            
-            
-           
-            
-            console.log("====================================================================================================================================");
-            
-            console.log("====================================================================================================================================");
     }
 
 
@@ -79,8 +79,7 @@ function spotifyAPI(userInput) {
 function defaultMovie() {
     var defaultMovieUrl = "http://www.omdbapi.com/?t=Mr.+Nobody&y=&plot=short&apikey=trilogy";
 
-    axios.get(defaultMovieUrl).then(
-        function (response) {
+    axios.get(defaultMovieUrl).then(function (response) {
 
             console.log("====================================================================================================================================");
             console.log("Title: " + response.data.Title);
@@ -100,10 +99,9 @@ function movieAPI() {
 
     var movieQueryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
 
-    axios.get(movieQueryUrl).then(
-        function (response) {
+    axios.get(movieQueryUrl).then(function (err, response) {
 
-            if (userInput === "") {
+            if (userInput === "" || err) {
                 defaultMovie()
             } else {
                 console.log("====================================================================================================================================");
