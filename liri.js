@@ -7,13 +7,9 @@ var axios = require("axios");
 var moment = require("moment");
 
 var userCommand = process.argv[2];
-// console.log(userCommand);
 
 var userInput = process.argv.slice(3).join(" ");
-console.log("userInput: ", userInput);
 
-
-//switch statement to see which api call to make//
 switch (userCommand) {
 
     case "concert-this":
@@ -44,7 +40,7 @@ function bandsAPI() {
     var concertUrl = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
 
     axios.get(concertUrl).then(function (response) {
-
+    
         var date = response.data[0].datetime;
         var formatDate = moment(date).format('MM/DD/YYYY');
 
@@ -86,16 +82,12 @@ function movieAPI() {
     var movieQueryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
 
     axios.get(movieQueryUrl).then(function (response) {
-    console.log(response)
-        // if (response.data.Response.Error === "False");{
-        //     console.log(error)
-        // }
-        console.log("I can't seem to find that one. It's " + response.data.Response.Error + ", Please try another one")
+        console.log(response.data.Ratings)
         console.log("====================================================================================================================================");
         console.log("Title: " + response.data.Title);
         console.log("Released: " + response.data.Released);
         console.log("Rated: " + response.data.Rated);
-        // console.log("Rotten Tomatoes Rating: " + response.data.Ratings.Source.Value);
+        console.log("Rotten Tomatoes: " + response.data.Ratings[1].Value);
         console.log("Country: " + response.data.Country);
         console.log("Language: " + response.data.Language);
         console.log("Plot: " + response.data.Plot);
@@ -112,7 +104,7 @@ function doWhat() {
         }
 
         var spotify = new Spotify(keys.spotify);
-        console.log(data);
+        
         spotify.search({ type: "track", query: data, limit: 1 }).then(function (response) {
             var songs = response.tracks.items[0];
             console.log("====================================================================================================================================");
@@ -122,7 +114,7 @@ function doWhat() {
             console.log("Album: " + songs.album.name);
             console.log("====================================================================================================================================");
         });
-})
+    })
 }
 
 
