@@ -1,10 +1,12 @@
-# Liri-Node-App
+# Liri Node App
 
 LIRI is a Language Interpretation and Recognition Interface. This command line node app takes in parameters and gives you back data. 
 
-To use this app the user needs run:   npm install   
-  -They should do this from their terminal, and make sure they are inside the corresponding directory.
-  -This will give them access to the node modules required to run the app.
+# Get Started
+
+**To use this app the user needs to run: npm install**   
+  * They should do this from their terminal, and make sure they are inside the     corresponding directory.
+  * This will give them access to the node modules required to run the app.
 
 To use this the user needs to supply their own .env file. They will also need to supply their own API keys from Spotify. 
     -To do this, create a file named .env, add the following to it, replacing the values with your API keys (no quotes) once you have them:

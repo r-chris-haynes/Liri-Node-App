@@ -34,23 +34,20 @@ switch (userCommand) {
 }
 
 function bandsAPI() {
-
-    
     
     var concertUrl = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
 
-    axios.get(concertUrl).then(function (response) {
+    axios.get(concertUrl).then(function (err, response) {
     
         var date = response.data[0].datetime;
         var formatDate = moment(date).format('MM/DD/YYYY');
-
+        
         console.log("====================================================================================================================================");
         console.log(userInput + "'s next concert is at " + response.data[0].venue.name);
         console.log("In " + response.data[0].venue.city + ", " + response.data[0].venue.region);
         console.log("On " + formatDate);
         console.log("====================================================================================================================================");
-        }
-    );
+    });
 }
 
 function spotifyAPI() {
