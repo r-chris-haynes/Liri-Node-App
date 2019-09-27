@@ -21,12 +21,26 @@ LIRI is a Language Interpretation and Recognition Interface. This command line n
 
 **Instructions for searching:**
    * Type in one of the following four lines into your command line.
-  * node liri.js concert-this <artist/band name here>
   * node liri.js spotify-this-song <song name here>
   * node liri.js movie-this <movie name here>
   * node liri.js do-what-it-says
-
+  * node liri.js concert-this <artist/band name here>
     **These commands make API calls to retrieve the associated data that is displayed in the terminal**
 
-# Demo Video
-![liriVid](images/liriVid.mov)
+# Demo Gifs
+
+Here's what happens if the user doesn't enter a recognizable command
+
+![](images/liriGif1.gif)
+
+Now see what happens when they search for a song
+
+![](images/liriGif2.gif)
+
+Search for a movie
+
+![](images/liriGif3.gif)
+
+Do what it says 
+
+![](images/liriGif4.gif)
