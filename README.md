@@ -44,3 +44,16 @@ Search for a movie
 Do what it says 
 
 ![](images/liriGif4.gif)
+
+# Technologies Used
+
+* Node.js
+* Axios
+* Moment
+* Spotify API
+* OMDB API
+* Bands in Town API
+
+# Issues
+
+Currently their is not fuctionality for the concert-this command
