@@ -7,27 +7,25 @@ LIRI is a Language Interpretation and Recognition Interface. This command line n
 **To use this app the user needs to run: npm install**   
   * They should do this from their terminal, and make sure they are inside the     corresponding directory.
   * This will give them access to the node modules required to run the app.
-
-**The user needs to create their own .env file, and supply their own API keys from Spotify.**
-     1. create a file named .env, add the following to it, replacing     the values with your API keys (no quotes) once you have them:
-        # Spotify API keys
-        SPOTIFY_ID=your-spotify-id
-        SPOTIFY_SECRET=your-spotify-secret
+  * Create a .env file 
+  * In that file provide their Spotify API keys
+  * SPOTIFY_ID=your-spotify-id
+  * SPOTIFY_SECRET=your-spotify-secret
     
-The user has four categories they can search: 
-    1. They can search the Bands In Town API to find out a favorite artist's next          concert.
-    2. They can search the Spotify API to get information on a favorite song.
-    3. They can search the OMDB API to find information on a favorite movie.
-    4. They can pull from the random.txt file to run a Spotify song search of
+**The user has four categories they can search:** 
+   * 1. They can search the Bands In Town API to find out a favorite artist's next concert.
+   * 2. They can search the Spotify API to get information on a favorite song.
+  * 3. They can search the OMDB API to find information on a favorite movie.
+  * 4. They can pull from the random.txt file to run a Spotify song search of
        the text from that file.
 
-Here are instructions on how to these searches:
-    Type in one of the following four lines into your command line.
-    node liri.js concert-this <artist/band name here>
-    node liri.js spotify-this-song <song name here>
-    node liri.js movie-this <movie name here>
-    node liri.js do-what-it-says
+**Instructions for searching:**
+   * Type in one of the following four lines into your command line.
+  * 1.  node liri.js concert-this <artist/band name here>
+  * 2.  node liri.js spotify-this-song <song name here>
+  * 3.  node liri.js movie-this <movie name here>
+  * 4.  node liri.js do-what-it-says
 
-    *These commands make API calls to retrieve the associated data that is displayed in the terminal
+    **These commands make API calls to retrieve the associated data that is displayed in the terminal**
 
 
