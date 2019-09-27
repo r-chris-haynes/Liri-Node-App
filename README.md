@@ -28,3 +28,5 @@ LIRI is a Language Interpretation and Recognition Interface. This command line n
 
     **These commands make API calls to retrieve the associated data that is displayed in the terminal**
 
+# Demo Video
+![liriVid](images/liriVid.mov)
